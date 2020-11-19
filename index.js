@@ -1,6 +1,5 @@
 const {Engine, Render, Runner, World, Bodies, MouseConstraint, Mouse} = Matter;
 
-
 const width = 800;
 const height = 600;
 const engine = Engine.create();
@@ -33,7 +32,7 @@ World.add(world, walls);
 
 //Random Shapes
 for (let i = 0; i < 20; i++) {
-    if (Math.random() > 0.2) {
+    if (Math.random() > 0.3) {
         World.add(
             world,
             Bodies.rectangle(Math.random() * width, Math.random() * height, 50, 50, {
@@ -42,7 +41,7 @@ for (let i = 0; i < 20; i++) {
                 }
             }));
     }
-    if (Math.random() < 0.3 > 0.5) {
+    if (Math.random() < 0.4 > 0.6) {
         World.add(
             world,
             Bodies.circle(Math.random() * width, Math.random() * height, 35, {
@@ -51,16 +50,22 @@ for (let i = 0; i < 20; i++) {
                 }
             })
         );
-    } else {
+    }
+    if (Math.random() > 0.7) {
         World.add(
             world,
             Bodies.trapezoid(Math.random() * width, Math.random() * height, 50, 50, 1, {
-                    render: {
-                        // fillStyle: 'yellow',
-                    }
+                render: {
+                    // fillStyle: 'yellow',
                 }
-            ))
+            }));
+    } else {
+        World.add(
+            world,
+            Bodies.polygon(Math.random() * width, Math.random() * height, 8, 35)
+        )
     }
 }
+
 
 
