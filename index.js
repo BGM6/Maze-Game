@@ -57,9 +57,11 @@ const stepThroughCell = (row, column) => {
     grid[row][column] = true;
 //    Assemble randomly-ordered list of neighbors
     const neighbors = [
-        [row -1, column],
-        ]
-
+        [row - 1, column],
+        [row, column + 1],
+        [row + 1, column],
+        [row, column - 1],
+    ];
 
 //    If we have visited that neighbor, continue to next neighbor
 
