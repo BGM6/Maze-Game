@@ -50,20 +50,25 @@ const startColumn = Math.floor(Math.random() * cells);
 
 const stepThroughCell = (row, column) => {
 //   If I have visited the cell at [row, column], then return
-
+    if (grid[row][column]) {
+        return;
+    }
 //    Mark this cell as being visited by true/false
-
+    grid[row][column] = true;
 //    Assemble randomly-ordered list of neighbors
+    const neighbors = [
+        [row -1, column],
+        ]
 
+
+//    If we have visited that neighbor, continue to next neighbor
+
+//    Remove a wall from either horizontal or verticals
+
+//    Visit that next cell
 }
 
 stepThroughCell(startRow, startColumn)
+console.log(grid);
 
-// Same as above code block
-// for (let i = 0; i < 3; i++) {
-//     grid.push([]);
-//     for (let j = 0; j < 3; j++) {
-//         grid[i].push(false);
-//     }
-// }
 
